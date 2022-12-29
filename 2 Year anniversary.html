@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Two Years Anniversary</title>
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <style>
+      .head {
+        text-align: center;
+        color: #63b2ee;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-size: 50px;
+      }
+      .iconH{
+        color: red;
+        font-size: 50px;
+      }
+      .photos{
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .photos:hover{
+        max-width: 500px;
+        height: 500px;
+      }
+      body{
+        background-color:lightgrey;
+      }
+      #photoContainer{
+        width: 1800px;
+        margin: 0% auto;
+      }
+      .sound{
+        display: block;
+        margin: 0% auto;
+      }
+
+    </style>
+    
+  </head>
+    <div id="container">
+      <h1>
+        <p class="head">
+            <span class="iconfont icon-hongxin iconH"></span>
+            <i>Happy <strong> 2</strong> Anniversary !!!</i>
+            <span class="iconfont icon-hongxin iconH"></span>
+        </p>
+      </h1>
+         <audio controls autoplay class="sound">
+         <source src="C:\Users\Kydz\Desktop\Front-end\2 years\chateau.mp3">
+         </audio>
+    
+    </div>
+    <div class="images" id="photoContainer">
+    </div>
+    <script>
+        var data = [
+            {
+                name: '1.jpg',
+                title: 'right now',
+                
+            },
+            {
+                name: '2.jpg',
+                title: 'fuck you'
+            }
+        ];
+
+        var photo = "";
+        for (let i = 0; i < 50; i++) {
+            var string = generateImageTagByI(i);
+            photo = string + photo;
+        }
+        function generateImageTagByI(i) {
+            var item = data[i];
+            var stringStart = "<img title=\"" + item?.title + "\" class=\"photos\" src=\"C:\\Users\\Kydz\\Desktop\\Front-end\\2 years\\";
+            var stringEnd = ".jpg\">";
+            return stringStart + (i + 1) + stringEnd;
+        }
+        var div = document.getElementById("photoContainer");
+        div.innerHTML = photo;
+    </script>
+    
+
+  </body>
+</html>
